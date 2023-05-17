@@ -4,7 +4,7 @@
 
 
 .my-con{
-  @apply max-w-[1170px] mx-auto;
+  @apply max-w-[1320px] mx-auto;
 }
 
 .btn-bg-color{
@@ -12,4 +12,10 @@
 }
 .main-text-color{
   @apply text-[#ff6799];
+}
+.section-bg{
+  @apply bg-[#4acdd5];
+}
+.outlet-height{
+@apply min-h-[calc(100vh-498px)]
 }

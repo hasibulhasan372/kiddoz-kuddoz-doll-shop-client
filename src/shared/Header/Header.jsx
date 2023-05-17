@@ -18,6 +18,7 @@ const Header = () => {
                 <div className="lg:space-x-8 lg:font-bold lg:text-lg lg:col-span-3 lg:flex lg:items-center">
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/allToys">All Toys</NavLink>
+                    <NavLink to="/blog">Blog</NavLink>
                     <div className="lg:space-x-8">
                         {
                             user ? <>
