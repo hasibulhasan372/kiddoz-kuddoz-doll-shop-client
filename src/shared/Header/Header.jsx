@@ -12,7 +12,7 @@ const Header = () => {
                     <NavLink to="/allToys">All Toys</NavLink>
                     <NavLink to="/myToys">My Toys</NavLink>
                     <NavLink to="/addToys">Add Toys</NavLink>
-                    <Link className="py-2 px-6 font-semibold border rounded-3xl btn-bg-color text-white">Login</Link>
+                    <Link to="/login" className="py-2 px-6 font-semibold border rounded-3xl btn-bg-color text-white">Login</Link>
                 </div>
             </div>
         </div>
