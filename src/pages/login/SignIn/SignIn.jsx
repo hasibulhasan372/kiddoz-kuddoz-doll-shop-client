@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 
 
 const SignIn = () => {
@@ -22,7 +23,7 @@ const SignIn = () => {
 
     return (
         <div className="my-con">
-            <div className="lg:w-2/3 lg:p-4 bg-cyan-100 m-auto mt-10 rounded">
+            <div className="lg:w-2/3 lg:p-8 bg-cyan-100 m-auto mt-10 rounded">
                 <h1 className="lg:text-5xl lg:font-bold">Login</h1>
                 <form onSubmit={handleLogIn} className="mt-8">
                     <div className="mb-4">
@@ -37,6 +38,10 @@ const SignIn = () => {
 
                     </div>
                 </form>
+                <div className="mt-4">
+                    <h2 className="text-lg font-semibold">Or</h2>
+                    <GoogleSignIn></GoogleSignIn>
+                </div>
                 <div>
                     <p>Haven't an account? <Link to="/signUp" className="text-green-500 underline">Sign Up</Link></p>
                 </div>
