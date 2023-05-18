@@ -1,9 +1,10 @@
+import CategoryTab from "../CategoryTab/CategoryTab";
 
 
 const Home = () => {
     return (
-        <div>
-            
+        <div className="my-con">
+            <CategoryTab></CategoryTab>
         </div>
     );
 };

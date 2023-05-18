@@ -2,7 +2,7 @@
 const MyToy = ({myToy}) => {
     const { name, img, price, rating, sellerName, quantity, category } = myToy;
     return (
-        <div className="card w-96 glass ">
+        <div className="card w-96 glass " >
             <figure ><img src={img} alt="img" className="lg:w-[250px] lg:h-[250px] object-cover lg:pt-5 text-left" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
