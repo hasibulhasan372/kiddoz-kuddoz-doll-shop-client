@@ -1,13 +1,15 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const AddToys = () => {
-
+    const {user} = useContext(AuthContext);
 
     const handleDollPost = e =>{
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const sellerName = form.sellerName.value;
-        const sellerEmail = form.email.value;
+        const sellerEmail = user?.email;
         const rating = form.rating.value;
         const price = form.price.value;
         const category = form.category.value;
@@ -45,7 +47,7 @@ const AddToys = () => {
                     </div>
                     <div>
                         <label className="text-base font-medium block mb-2"> Seller Email</label>
-                        <input type="email" name="email" id="email" placeholder="Email " className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required />
+                        <input type="email" name="email" id="email" defaultValue={user?.email} className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required readOnly />
                     </div>
                     <div>
                         <label className="text-base font-medium block mb-2"> Doll Price</label>
