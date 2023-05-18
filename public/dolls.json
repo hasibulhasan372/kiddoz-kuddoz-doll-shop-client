@@ -1,0 +1,70 @@
+[
+    {
+      "name": "White Princes Fashion Doll",
+      "sellerName": "Toy Paradise",
+      "sellerEmail": "toyparadise@example.com",
+      "rating": 4.5,
+      "category": "Barbie Dolls",
+      "price": 19.99,
+      "img": "https://i.ibb.co/nbMhVdS/white-princes.jpg",
+      "quantity": 10,
+      "details": "This Barbie Fashion Doll comes with stylish clothes and accessories."
+    },
+    {
+      "name": "Mermaid Alive Doll",
+      "sellerName": "Kids Emporium",
+      "sellerEmail": "kidsemp@example.com",
+      "rating": 4.2,
+      "category": "Disney Dolls",
+      "price": 29.99,
+      "img": "https://i.ibb.co/zh5pCTj/mermaid.jpg",
+      "quantity": 5,
+      "details": "The Baby Alive Doll can eat, drink, and wet its diaper, providing a realistic play experience."
+    },
+    {
+      "name": "American Girl Doll",
+      "sellerName": "Toys R Us",
+      "sellerEmail": "toysrus@example.com",
+      "rating": 4.8,
+      "category": "American Girl",
+      "price": 49.99,
+      "img": "https://i.ibb.co/dPrzC0g/Americal-girl-two.jpg",
+      "quantity": 3,
+      "details": "The American Girl Doll is a high-quality collectible doll with a wide range of accessories and outfits."
+    },
+    {
+      "name": "Snow White Princes Doll",
+      "sellerName": "Toy World",
+      "sellerEmail": "toyworld@example.com",
+      "rating": 4.3,
+      "category": "Barbie Dolls",
+      "price": 12.99,
+      "img": "https://i.ibb.co/H2bdkSX/Snow-white-Princes.jpg",
+      "quantity": 20,
+      "details": "Unwrap the L.O.L. Surprise! Doll to reveal multiple surprise layers and accessories."
+    },
+    {
+      "name": "Frozen Princess Doll Set",
+      "sellerName": "Magic Toys",
+      "sellerEmail": "magictoys@example.com",
+      "rating": 4.6,
+      "category": "Disney Dolls",
+      "price": 39.99,
+      "img": "https://i.ibb.co/JHGQLH7/frozen-gril-doll.jpg",
+      "quantity": 8,
+      "details": "The Disney Princess Doll Set includes a collection of popular princess characters with beautiful dresses."
+    },
+    {
+      "name": "Cabbage Patch Kids Doll",
+      "sellerName": "Happy Toys",
+      "sellerEmail": "happytoys@example.com",
+      "rating": 4.1,
+      "category": "American Girl",
+      "price": 24.99,
+      "img": "https://i.ibb.co/4jf0BGF/american-girl-one.jpg",
+      "quantity": 12,
+      "details": "Cabbage Patch Kids Dolls are soft and huggable, making them perfect companions for imaginative play."
+    }
+  ]
+
+  

@@ -5,8 +5,8 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    
-    const handleLogOut = () =>{
+
+    const handleLogOut = () => {
         logOut();
     }
 
@@ -19,11 +19,12 @@ const Header = () => {
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/allToys">All Toys</NavLink>
                     <NavLink to="/blog">Blog</NavLink>
+                    <NavLink to="/myToys">My Toys</NavLink>
+                    <NavLink to="/addToys">Add Toys</NavLink>
                     <div className="lg:space-x-8">
                         {
                             user ? <>
-                                <NavLink to="/myToys">My Toys</NavLink>
-                                <NavLink to="/addToys">Add Toys</NavLink>
+
                                 <img src={user?.photoURL || user?.displayName} alt="userPhoto" className="lg:w-8 lg:h-8 rounded-full inline-block border " />
                                 <button onClick={handleLogOut} className="py-2 px-6 font-semibold border rounded-3xl btn-bg-color text-white">
                                     Logout
