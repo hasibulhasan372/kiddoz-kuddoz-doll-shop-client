@@ -6,7 +6,7 @@ const CategoryTab = () => {
     const [toys, setToys] = useState([]);
     const [activeTab, setActiveTab] = useState("Disney Dolls");
     useEffect(() => {
-        fetch(`http://localhost:5000/dolls?category=${activeTab}`)
+        fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls?category=${activeTab}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [activeTab]);
