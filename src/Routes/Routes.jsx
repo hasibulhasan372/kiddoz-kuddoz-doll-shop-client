@@ -7,6 +7,7 @@ import Error from "../pages/Error/Error";
 import AllToys from "../pages/AllToys/AllToys";
 import AddToys from "../pages/AddToys/AddToys";
 import MyToys from "../pages/MyToys/MyToys";
+import ViewDetails from "../pages/ViewDetails/ViewDetails";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         {
             path: "addToys",
             element: <AddToys></AddToys>
+        },
+        {
+            path: "viewDetails/:id",
+            element: <ViewDetails></ViewDetails>,
+            loader: ({params}) => fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls/${params.id}`)
         }
       ]
     },
