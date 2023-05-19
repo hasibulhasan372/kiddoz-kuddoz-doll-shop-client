@@ -4,7 +4,7 @@ import MyToy from "../../card/MyToy/MyToy";
 
 
 const MyToys = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
     const url = `https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls?sellerEmail=${user?.email}`
 
@@ -32,14 +32,31 @@ const MyToys = () => {
     return (
         <div className="my-con lg:my-12">
             <h1 className="text-2xk font-bold mb-6">Total My Add Toys: {myToys.length} </h1>
-            <div className="grid grid-cols-3">
-                {
-                    myToys.map(myToy => <MyToy
-                    key={myToy._id}
-                    myToy={myToy}
-                    handleDeleteToy={handleDeleteToy}
-                    ></MyToy>)
-                }
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
+                    {/* head */}
+                    <thead  >
+                        <tr className="main-text-color">
+                            <th className="text-lg border capitalize">Name</th>
+                            <th className="text-lg border capitalize">Category</th>
+                            <th className="text-lg border capitalize">Price</th>
+                            <th className="text-lg border capitalize">Quantity</th>
+                            <th className="text-lg border capitalize">Seller Name</th>
+                            <th className="text-lg border capitalize">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* row 1 */}
+                        {loading ? <></> :
+                            myToys.map(toy => <MyToy
+                                key={toy._id}
+                                toy={toy}
+                                handleDeleteToy={handleDeleteToy}
+                            ></MyToy>)
+                        }
+                    </tbody>
+                    {/* foot */}
+                </table>
             </div>
         </div>
     );
