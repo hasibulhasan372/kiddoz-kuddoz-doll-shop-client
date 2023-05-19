@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const GoogleSignIn = () => {
@@ -9,7 +10,13 @@ const GoogleSignIn = () => {
         .then(result =>{
             const loggedUser = result.user;
             if(loggedUser.email){
-                alert("Google Sign In Successful ")
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: 'Log in Successful',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
             }
         })
     }

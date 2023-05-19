@@ -1,12 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
-    const { createUser} = useContext(AuthContext)
+    const { createUser, logOut} = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleSignIn = (e) =>{
         e.preventDefault();
         const form = e.target;
@@ -18,8 +20,19 @@ const SignUp = () => {
         createUser(email, password)
         .then(result =>{
             const loggedUser = result.user;
-            console.log(loggedUser);
-            updateUserInfo(result.user, name, photo)
+            updateUserInfo(result.user, name, photo);
+            if(loggedUser){
+                logOut();
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: 'Sign Up Successful',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
+            }
+            form.reset("");
+            navigate("/login")
         })
         .catch(error => console.log(error))
 
