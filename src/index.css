@@ -19,3 +19,6 @@
 .outlet-height{
 @apply min-h-[calc(100vh-498px)]
 }
+.active{
+  @apply text-[#ff6799]
+}
