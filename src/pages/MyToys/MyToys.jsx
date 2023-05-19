@@ -33,24 +33,28 @@ const MyToys = () => {
         <div className="my-con lg:my-12">
             <h1 className="text-2xk font-bold mb-6">Total My Add Toys: {myToys.length} </h1>
             <div className="overflow-x-auto w-full">
-                <table className="table w-full">
+                <table className="  table-auto">
                     {/* head */}
                     <thead  >
-                        <tr className="main-text-color">
-                            <th className="text-lg border capitalize">Name</th>
-                            <th className="text-lg border capitalize">Category</th>
-                            <th className="text-lg border capitalize">Price</th>
-                            <th className="text-lg border capitalize">Quantity</th>
-                            <th className="text-lg border capitalize">Seller Name</th>
-                            <th className="text-lg border capitalize">Action</th>
+                        <tr className="main-text-color  bg-slate-100">
+                            <th></th>
+                            <th className="text-lg capitalize ">Name</th>
+                            <th className="text-lg capitalize p-2 ">Category</th>
+                            <th className="text-lg capitalize p-2 ">Price</th>
+                            <th className="text-lg capitalize p-2 ">Quantity</th>
+                            <th className="text-lg capitalize p-2 ">Seller Name</th>
+                            <th className="text-lg capitalize p-2 ">Seller Email</th>
+                            <th className="text-lg capitalize p-2 ">Details</th>
+                            <th className="text-lg capitalize p-2 ">Rating</th>
+                            <th className="text-lg capitalize p-2 ">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="">
                         {/* row 1 */}
                         {loading ? <></> :
-                            myToys.map(toy => <MyToy
-                                key={toy._id}
-                                toy={toy}
+                            myToys.map(myToy => <MyToy
+                                key={myToy._id}
+                                myToy={myToy}
                                 handleDeleteToy={handleDeleteToy}
                             ></MyToy>)
                         }

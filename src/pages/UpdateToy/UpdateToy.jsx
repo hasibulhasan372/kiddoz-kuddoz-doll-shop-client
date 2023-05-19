@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateToy = () => {
     const toy = useLoaderData()
@@ -27,7 +29,7 @@ const UpdateToy = () => {
         .then(res => res.json())
         .then(data => {
             if(data.modifiedCount > 0){
-                alert("Toy Updated")
+                toast("Toy Details Updated")
             }
         })
 
@@ -70,6 +72,7 @@ const UpdateToy = () => {
                     </div>
 
                 </form>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );

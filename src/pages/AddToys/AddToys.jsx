@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddToys = () => {
     const {user} = useContext(AuthContext);
@@ -19,7 +21,6 @@ const AddToys = () => {
         const dollsDetails ={
             name,sellerName,sellerEmail,rating,category,price,img,quantity,details
         }
-        console.log(dollsDetails)
         fetch("https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls",{
             method: "POST",
             headers: {
@@ -28,7 +29,11 @@ const AddToys = () => {
             body: JSON.stringify(dollsDetails)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+                toast("Toy Added")
+            
+        })
 
     }
 
@@ -51,7 +56,7 @@ const AddToys = () => {
                     </div>
                     <div>
                         <label className="text-base font-medium block mb-2"> Doll Price</label>
-                        <input type="number" name="price" id="price" placeholder="Doll Price " className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required />
+                        <input type="text" name="price" id="price" placeholder="Doll Price " className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required />
                     </div>
                     <div>
                         <label className="text-base font-medium block mb-2"> Doll Quantity</label>
@@ -63,7 +68,7 @@ const AddToys = () => {
                     </div>
                      <div>
                         <label className="text-base font-medium block mb-2">Rating ( 1 to 5 )</label>
-                        <input type="number" name="rating" id="rating" placeholder=" Rating" className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required />
+                        <input type="text" name="rating" id="rating" placeholder=" Rating" className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required />
                     </div>
                     <div >
                         <label className="text-base font-medium block mb-2"> Doll Photo URL</label>
@@ -78,6 +83,7 @@ const AddToys = () => {
                     </div>
 
                 </form>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );
