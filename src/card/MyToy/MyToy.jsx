@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const MyToy = ({myToy, handleDeleteToy}) => {
     const {_id, name, img, price, rating, sellerName, quantity, category } = myToy;
@@ -12,7 +13,9 @@ const MyToy = ({myToy, handleDeleteToy}) => {
                 <p>Quantity: {quantity}</p>
                 <p>Rating: {rating}</p>
                 <div className="card-actions justify-end">
+                    <Link to={`/update/${_id}`}>
                     <button className="btn btn-primary capitalize">Update</button>
+                    </Link>
 
                     <button onClick={()=>handleDeleteToy(_id)} className="btn btn-warning capitalize">Delete</button>
                     

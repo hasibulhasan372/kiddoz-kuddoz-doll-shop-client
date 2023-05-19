@@ -15,25 +15,29 @@ const CategoryTab = () => {
         setActiveTab(tabName);
     }
     return (
-        <div className="lg:my-14">
+        <div className="hero lg:my-6 " style={{ backgroundImage: `url("https://i.ibb.co/sPdZfRL/pexels-laura-james-6102450.jpg")` }}>
+            <div className="hero-overlay bg-opacity-60 "></div>
 
-            <div className="flex">
-                <button onClick={() => handleTabName("Disney Dolls")}
-                    className={`${activeTab === "Disney Dolls" ? "border-t border-r p-2 " : "border-t border-r p-2 bg-slate-300"}`}>
-                    Disney Doll
-                </button>
-                <button onClick={() => handleTabName("American Girl")} className={`${activeTab === "American Girl" ? "border-t border-r p-2 " : "border-t border-r p-2 bg-slate-300"}`}>American Doll</button>
-                <button onClick={() => handleTabName("Barbie Dolls")} className={`${activeTab === "Barbie Dolls" ? "border-t border-r p-2 " : "border-t border-r p-2 bg-slate-300"}`}>Barbie Doll</button>
+            <div className="my-con  lg:py-14 ">
 
-            </div>
-            <div className="mt-4 grid grid-cols-2">
+                <div className="flex">
+                    <button onClick={() => handleTabName("Disney Dolls")}
+                        className={`${activeTab === "Disney Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>
+                        Disney Doll
+                    </button>
+                    <button onClick={() => handleTabName("American Girl")} className={`${activeTab === "American Girl" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>American Doll</button>
+                    <button onClick={() => handleTabName("Barbie Dolls")} className={`${activeTab === "Barbie Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>Barbie Doll</button>
 
-                {
-                    toys.map(toy => <Toy
-                        key={toy._id}
-                        toy={toy}
-                    ></Toy>)
-                }
+                </div>
+                <div className="mt-4 grid grid-cols-2 lg:gap-10">
+
+                    {
+                        toys.map(toy => <Toy
+                            key={toy._id}
+                            toy={toy}
+                        ></Toy>)
+                    }
+                </div>
             </div>
 
 

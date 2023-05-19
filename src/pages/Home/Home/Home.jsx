@@ -1,11 +1,13 @@
 import CategoryTab from "../CategoryTab/CategoryTab";
+import HeroSection from "../HeroSection/HeroSection";
 
 
 const Home = () => {
     return (
-        <div className="my-con">
+        <>
+            <HeroSection></HeroSection>
             <CategoryTab></CategoryTab>
-        </div>
+        </>
     );
 };
 
