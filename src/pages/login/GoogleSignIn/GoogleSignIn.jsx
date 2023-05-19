@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const GoogleSignIn = () => {
-    const {googleLogIn} = useContext(AuthContext)
+    const {googleLogIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/"; 
     const handleGoogleSignIn = () =>{
         googleLogIn()
         .then(result =>{
@@ -18,6 +23,7 @@ const GoogleSignIn = () => {
                     timer: 2000
                   })
             }
+            navigate(from, {replace: true})
         })
     }
     return (

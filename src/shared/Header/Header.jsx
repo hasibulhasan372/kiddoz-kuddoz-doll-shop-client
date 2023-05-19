@@ -38,7 +38,7 @@ const Header = () => {
                                     onMouseOut={handleHideName}
                                     src={user?.photoURL} alt="userPhoto" className="lg:w-8 lg:h-8 rounded-full border " />
                                      {
-                                    showName && <h1 className="absolute right-0 text-sm lg:w-[140px]  text-right rounded">{user?.displayName}</h1> 
+                                    showName && <h1 className="absolute right-0 -bottom-7 text-slate-600 text-sm lg:w-[140px]  text-right rounded">{user?.displayName}</h1> 
                                 }
                                 </NavLink>
                                
