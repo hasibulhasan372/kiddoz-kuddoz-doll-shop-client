@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Toy from "../../../card/Toy/Toy";
-
+import 'aos/dist/aos.css';
+import Aos from "aos";
+Aos.init();
 
 const CategoryTab = () => {
     const [toys, setToys] = useState([]);
@@ -19,14 +21,24 @@ const CategoryTab = () => {
             <div className="hero-overlay bg-opacity-60 "></div>
 
             <div className="my-con  lg:py-14 ">
-                    <h1 className="lg:text-4xl main-text-color lg:font-bold text-center pb-6">Shop By Category </h1>
+                    <h1 className="lg:text-3xl main-text-color lg:font-bold text-center pb-6"
+                    data-aos="fade-right" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
+                    >Shop By Category 
+                        </h1>
                 <div className="flex">
                     <button onClick={() => handleTabName("Disney Dolls")}
-                        className={`${activeTab === "Disney Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>
+                        className={`${activeTab === "Disney Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}
+                        data-aos="fade-left" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
+                        
+                        >
                         Disney Doll
                     </button>
-                    <button onClick={() => handleTabName("American Girl")} className={`${activeTab === "American Girl" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>American Doll</button>
-                    <button onClick={() => handleTabName("Barbie Dolls")} className={`${activeTab === "Barbie Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>Barbie Doll</button>
+                    <button onClick={() => handleTabName("American Girl")} className={`${activeTab === "American Girl" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}
+                    data-aos="fade-bottom" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
+                    >American Doll</button>
+                    <button onClick={() => handleTabName("Barbie Dolls")} className={`${activeTab === "Barbie Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}
+                    data-aos="fade-left" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
+                    >Barbie Doll</button>
 
                 </div>
                 <div className="mt-4 grid lg:grid-cols-3 lg:gap-10">

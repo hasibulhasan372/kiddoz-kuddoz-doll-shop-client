@@ -5,8 +5,12 @@ const Footer = () => {
     return (
         <section className=" hero " style={{ backgroundImage: `url("https://i.ibb.co/pPjmSx7/pexels-andres-victorero-3730754.jpg")` }}>
             <div className="hero-overlay bg-opacity-60 "></div>
-            <div className="my-con grid lg:grid-cols-4 lg:gap-x-12 py-12">
-                <div className='lg:col-span-2'>
+            <div className="my-con grid lg:grid-cols-4 lg:gap-x-12 py-12"
+            
+            >
+                <div className='lg:col-span-2'
+                 data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
+                >
                     <img src="https://i.ibb.co/JxxscGk/logo.png" alt="" className="w-20 h-20 mb-4 rounded-full" />
                     <p className="text-lg text-white mb-4">It is a toy shop where you will; get all the dolls for kid. We are selling the most unique dolls with every size, color, design and different from other marketplace. </p>
                     <p className='text-lg text-white flex gap-3 '><FaAddressBook className='text-3xl text-orange-500'></FaAddressBook>
@@ -19,7 +23,9 @@ const Footer = () => {
                     Contact: +880-1846-923454
                     </p>
                 </div>
-                <div>
+                <div
+                 data-aos="fade-down-right" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
+                >
                     <h2 className='font-bold text-xl text-white mb-8 '>Quick Links</h2>
                     <div className='text-white flex flex-col gap-3 font-semibold'>
                     <Link to="/">Home</Link>
@@ -28,7 +34,8 @@ const Footer = () => {
                     <Link >Contact</Link>
                     </div>
                 </div>
-                <div>
+                <div
+                 data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out">
                     <h2 className='font-bold text-xl text-white mb-8 '>Follow Us On</h2>
                     <Link className='text-lg text-white flex gap-3 mt-2'><MdFacebook className='text-3xl text-orange-500'></MdFacebook>
                     Facebook
