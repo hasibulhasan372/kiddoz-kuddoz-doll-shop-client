@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import MyToy from "../../card/MyToy/MyToy";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyToys = () => {
@@ -14,19 +16,53 @@ const MyToys = () => {
             .then(data => setMyToys(data))
     }, [url]);
 
-    const handleDeleteToy = (id) =>{
-        fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls/${id}`,{
-            method:"DELETE"
-        })
-        .then(res => res.json())
-        .then(data => {
-            const remaining = myToys.filter(toy => toy._id !== id)
-            setMyToys(remaining)
-            if(data.deletedCount > 0){
-                alert("Deleted Successfully")
-            }
-        })
+    const handleDeleteToy = (id) => {
+            Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls/${id}`, {
+                            method: "DELETE"
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                        const remaining = myToys.filter(toy => toy._id !== id)
+                        setMyToys(remaining)
+                        if(data.deletedCount > 0){
+                        Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+                    } else if (
+                        /* Read more about handling dismissals below */
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                    Swal.fire(
+                            'Cancelled',
+                            'Your imaginary file is safe :)',
+                            'error'
+                        )
+                    }
+                
 
+
+            })
+
+    };
+    if (myToys.length === 0) {
+        return <div className="my-con py-12 flex gap-5 items-center justify-center">
+            <h1 className="text-center text-3xl font-bold">You have added no toys. Please add some toys.</h1>
+            <Link to="/addToys" className="text-xl underline text-green-400 capitalize">Add Toy</Link>
+        </div>
     }
 
     return (

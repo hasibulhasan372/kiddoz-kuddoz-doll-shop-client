@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -28,10 +29,12 @@ const AddToys = () => {
             },
             body: JSON.stringify(dollsDetails)
         })
-        .then(res => res.json())
+        .then(res => res.json()
+        )
         .then(data => {
-            console.log(data)
-                toast("Toy Added")
+            if(data.insertedId){
+                toast ("The Toy is added")
+            }
             
         })
 
