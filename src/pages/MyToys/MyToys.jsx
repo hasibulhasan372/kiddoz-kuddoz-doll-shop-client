@@ -17,45 +17,42 @@ const MyToys = () => {
     }, [url]);
 
     const handleDeleteToy = (id) => {
-            Swal.fire({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes, delete it!',
-                    cancelButtonText: 'No, cancel!',
-                    reverseButtons: true
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls/${id}`, {
-                            method: "DELETE"
-                        })
-                            .then(res => res.json())
-                            .then(data => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
                         const remaining = myToys.filter(toy => toy._id !== id)
                         setMyToys(remaining)
-                        if(data.deletedCount > 0){
-                        Swal.fire(
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',
                                 'success'
                             )
                         }
                     })
-                    } else if (
-                        /* Read more about handling dismissals below */
-                        result.dismiss === Swal.DismissReason.cancel
-                    ) {
-                    Swal.fire(
-                            'Cancelled',
-                            'Your imaginary file is safe :)',
-                            'error'
-                        )
-                    }
-                
-
-
-            })
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        })
 
     };
     if (myToys.length === 0) {
@@ -64,10 +61,24 @@ const MyToys = () => {
             <Link to="/addToys" className="text-xl underline text-green-400 capitalize">Add Toy</Link>
         </div>
     }
+    const handleLowPrice = () => {
+        fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/lowPriceDolls?sellerEmail=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyToys(data))
+    }
+    const handleHighPrice = () => {
+        fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/highPriceDolls?sellerEmail=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyToys(data))
+    }
 
     return (
         <div className="my-con lg:my-12">
-            <h1 className="text-2xk font-bold mb-6">Total My Add Toys: {myToys.length} </h1>
+            <div className=" flex gap-4 mb-4 items-center">
+                <h4 className="text-xl font-semibold"> Sort By: </h4>
+                <button className="btn bg-[#4acdd5] border-none text-[#fff] capitalize hover:bg-[#106a6e] transform duration-500" onClick={handleLowPrice}>Low to High</button>
+                <button className=" btn bg-[#4acdd5] border-none text-[#fff] capitalize hover:bg-[#106a6e] transform duration-500" onClick={handleHighPrice}>High to Low</button>
+            </div>
             <div className="overflow-x-auto w-full">
                 <table className="  table-auto">
                     {/* head */}

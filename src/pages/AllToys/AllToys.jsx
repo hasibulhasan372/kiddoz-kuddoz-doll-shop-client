@@ -24,7 +24,6 @@ const AllToys = () => {
     }
     return (
         <div className="my-con lg:pb-20">
-            <h1 className="text-4xl font-bold mb-20">Total Toys are: {toys.length}</h1>
             <div className="text-center lg:mb-6">
                 <input type="text" onChange={(e) => setSearch(e.target.value.toLowerCase())} placeholder="Search by Name" className="border p-2 border-[#4acdd5] placeholder:text-slate-900 rounded lg:w-3/12" />
             </div>

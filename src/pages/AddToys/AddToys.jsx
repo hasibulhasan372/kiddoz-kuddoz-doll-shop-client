@@ -20,8 +20,17 @@ const AddToys = () => {
         const quantity = form.quantity.value;
         const details = form.details.value;
         const dollsDetails ={
-            name,sellerName,sellerEmail,rating,category,price,img,quantity,details
+            name,
+            sellerName,
+            sellerEmail,
+            rating : parseFloat(rating),
+            category,
+            price : parseFloat(price),
+            img,
+            quantity: parseFloat(quantity),
+            details
         }
+        console.log(dollsDetails)
         fetch("https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls",{
             method: "POST",
             headers: {
@@ -32,6 +41,7 @@ const AddToys = () => {
         .then(res => res.json()
         )
         .then(data => {
+            console.log(data)
             if(data.insertedId){
                 toast ("The Toy is added")
             }

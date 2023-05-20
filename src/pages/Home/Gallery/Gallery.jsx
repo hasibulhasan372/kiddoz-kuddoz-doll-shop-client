@@ -5,7 +5,7 @@ const Gallery = () => {
     const [images, setImages] = useState([])
 
     useEffect(() =>{
-        fetch("http://localhost:5000/dollGallery")
+        fetch("https://kiddoz-kuddoz-doll-shop-server.vercel.app/dollGallery")
         .then(res => res.json())
         .then(data => setImages(data))
     },[])
