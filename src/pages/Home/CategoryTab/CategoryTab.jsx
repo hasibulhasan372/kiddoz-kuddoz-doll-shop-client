@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Toy from "../../../card/Toy/Toy";
-import 'aos/dist/aos.css';
-import Aos from "aos";
-Aos.init();
+
 
 const CategoryTab = () => {
     const [toys, setToys] = useState([]);
@@ -20,8 +18,8 @@ const CategoryTab = () => {
         <div className="hero lg:my-6 " style={{ backgroundImage: `url("https://i.ibb.co/sPdZfRL/pexels-laura-james-6102450.jpg")` }}>
             <div className="hero-overlay bg-opacity-60 "></div>
 
-            <div className="my-con  lg:py-14 ">
-                    <h1 className="lg:text-3xl main-text-color lg:font-bold text-center pb-6"
+            <div className="my-con py-10  lg:py-14 ">
+                    <h1 className=" text-xl lg:text-3xl main-text-color lg:font-bold text-center pb-6"
                     data-aos="fade-right" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
                     >Shop By Category 
                         </h1>
@@ -41,7 +39,7 @@ const CategoryTab = () => {
                     >Barbie Doll</button>
 
                 </div>
-                <div className="mt-4 grid lg:grid-cols-3 lg:gap-10">
+                <div className="mt-4 grid lg:grid-cols-3 gap-y-5 lg:gap-10">
 
                     {
                         toys.map(toy => <Toy

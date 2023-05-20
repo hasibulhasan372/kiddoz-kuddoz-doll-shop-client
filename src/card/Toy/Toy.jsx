@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Toy = ({ toy }) => {
     const { _id, name, img, price, rating} = toy;
     return (
-        <div className=" lg:px-4 rounded-xl lg:pb-4  glass ">
+        <div className=" lg:px-4 rounded-xl p-4 lg:pb-4  glass ">
             <div className="rounded-xl">
-            <img src={img} alt="img" className="lg:w-[260px] lg:h-[250px]  lg:pt-5"
+            <img src={img} alt="img" className=" w-[130px] h-[130px] lg:w-[260px]  lg:h-[250px]  lg:pt-5"
             data-aos="fade-right" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
             />
             </div>

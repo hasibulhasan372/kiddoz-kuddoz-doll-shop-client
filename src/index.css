@@ -4,7 +4,7 @@
 
 
 .my-con{
-  @apply max-w-[1320px] mx-auto;
+  @apply 2xl:w-[1170px] mx-auto;
 }
 
 .btn-bg-color{

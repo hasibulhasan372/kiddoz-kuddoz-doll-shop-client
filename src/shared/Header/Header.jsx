@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
-
+import {HiX} from "react-icons/hi"
+import {FaBars} from "react-icons/fa"
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [showName, setShowName] = useState(false)
+    const [showName, setShowName] = useState(false);
+    const [humMenu, setHumMenu] = useState(false);
 
     const handleLogOut = () => {
         logOut();
@@ -19,15 +21,23 @@ const Header = () => {
 
     return (
         <div className="my-con lg:py-4  ">
-            <div className="flex lg:justify-between  lg:items-center">
-                <img src="https://i.ibb.co/JxxscGk/logo.png" alt="logo.png" className="lg:w-24 lg:h-2w-24" />
+            <div className="flex justify-between py-2 items-center">
+                <img src="https://i.ibb.co/JxxscGk/logo.png" alt="logo.png" className="w-16 h-16 lg:w-24 lg:h-24" />
 
-                <div className="lg:space-x-8 lg:font-bold lg:text-lg lg:col-span-3 lg:flex lg:items-center">
+                <div className="flex-none">
+                    <button onClick={() => setHumMenu(!humMenu)} className="lg:hidden">
+                        {
+                            humMenu ? <HiX></HiX> : <FaBars></FaBars>
+                        }
+                    </button>
+
+
+                <div className={`lg:space-x-8 font-semibold text-lg lg:font-bold lg:col-span-3 flex flex-col lg:flex-row gap-3 items-center transform duration-700 ease-in-out absolute lg:static  ${humMenu ? "right-0 top-12 bg-slate-400 lg:bg-none py-4 px-4": "right-0 -top-44"}`}>
                     <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/">Home</NavLink>
-                    <NavLink to="/allToys">All Toys</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/allToys">All Toys</NavLink>
                     <NavLink to="/blog">Blog</NavLink>
 
-                    <div className="lg:space-x-8 flex items-center">
+                    <div className="lg:space-x-8 lg:flex items-center">
                         {
                             user ? <>
                                 <NavLink to="/myToys">My Toys</NavLink>
@@ -42,16 +52,20 @@ const Header = () => {
                                 }
                                 </NavLink>
                                
-                                <button onClick={handleLogOut} className="py-2 px-6 font-semibold border rounded-3xl btn-bg-color text-white">
+                                <button onClick={handleLogOut} className="py-2 px-3 
+                                lg:px-6 font-semibold border rounded-3xl btn-bg-color text-white">
                                     Logout
                                 </button>
                             </> :
-                                <Link to="/login" className="py-2 px-6 font-semibold border rounded-3xl btn-bg-color text-white">Login</Link>
+                                <Link to="/login" className="py-2 px-3 lg:px-6 font-semibold border rounded-3xl btn-bg-color text-white">Login</Link>
                         }
                     </div>
                     
 
                 </div>
+                </div>
+
+
             </div>
         </div>
     );

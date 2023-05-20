@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <section className=" hero " style={{ backgroundImage: `url("https://i.ibb.co/pPjmSx7/pexels-andres-victorero-3730754.jpg")` }}>
             <div className="hero-overlay bg-opacity-60 "></div>
-            <div className="my-con grid lg:grid-cols-4 lg:gap-x-12 py-12"
+            <div className="my-con pl-4 lg:pl-0 grid lg:grid-cols-4 lg:gap-x-12 py-8 lg:py-12"
             
             >
                 <div className='lg:col-span-2'
