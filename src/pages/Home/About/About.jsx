@@ -9,7 +9,7 @@ const About = () => {
                     <div>
                         <h3 className="text-5xl font-bold mb-4 font-serif">Who we are</h3>
                         <p>We are the number one Doll seller in the city. We have the enormous amount of product with latest version. You will get the most amazing collection of Dolls with hundreds of different varieties. We have many vendors they are supply us the product with the reasonable price.</p>
-                        <button className="btn btn-info text-white font-semibold capitalize text-xl mt-5">Learn More</button>
+                        <button className="main-btn text-white font-semibold capitalize text-xl mt-5">Learn More</button>
                     </div>
             </div>
         </div>

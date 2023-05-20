@@ -19,7 +19,7 @@ const CategoryTab = () => {
             <div className="hero-overlay bg-opacity-60 "></div>
 
             <div className="my-con  lg:py-14 ">
-
+                    <h1 className="lg:text-4xl main-text-color lg:font-bold text-center pb-6">Shop By Category </h1>
                 <div className="flex">
                     <button onClick={() => handleTabName("Disney Dolls")}
                         className={`${activeTab === "Disney Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>
@@ -29,7 +29,7 @@ const CategoryTab = () => {
                     <button onClick={() => handleTabName("Barbie Dolls")} className={`${activeTab === "Barbie Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg"}`}>Barbie Doll</button>
 
                 </div>
-                <div className="mt-4 grid grid-cols-2 lg:gap-10">
+                <div className="mt-4 grid lg:grid-cols-3 lg:gap-10">
 
                     {
                         toys.map(toy => <Toy
