@@ -34,11 +34,11 @@ const router = createBrowserRouter([
 
         {
             path: "myToys",
-            element: <MyToys></MyToys>
+            element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
         },
         {
             path: "addToys",
-            element: <AddToys></AddToys>
+            element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
         },
         {
             path: "viewDetails/:id",
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         },
         {
             path: "update/:id",
-            element: <UpdateToy></UpdateToy>,
+            element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
             loader: ({params}) => fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls/${params.id}`)
         },
         {

@@ -40,7 +40,7 @@ const CategoryTab = () => {
                     >Barbie Doll</button>
 
                 </div>
-                <div className="mt-4 grid lg:grid-cols-3 gap-y-5 lg:gap-10 overflow-x-hidden" data-aos="fade-down-right" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out">
+                <div className="mt-4 grid lg:grid-cols-4 gap-y-5 lg:gap-10 overflow-x-hidden" data-aos="fade-down-right" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out">
 
                     { loading ? <BounceLoader color="#36d7b7" className="m-auto" />  :
                         toys.map(toy => <Toy

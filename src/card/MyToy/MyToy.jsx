@@ -23,7 +23,7 @@ const MyToy = ({ myToy, handleDeleteToy }) => {
             <td className=" p-2 ">{quantity}</td>
             <td className=" p-2 ">{sellerName}</td>
             <td className=" p-2 ">{sellerEmail}</td>
-            <td className=" p-2 ">{details}</td>
+            <td className=" p-2 ">{details.length > 100 ? `${details.slice(0,100)}....` : details}</td>
             <td className=" p-2">
                 {rating}
 
