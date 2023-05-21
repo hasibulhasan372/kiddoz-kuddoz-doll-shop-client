@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import SingleToy from "../../card/SingleToy/SingleToy";
+import { CircleLoader } from "react-spinners";
 
 
 const AllToys = () => {
@@ -14,6 +15,7 @@ const AllToys = () => {
         fetch("https://kiddoz-kuddoz-doll-shop-server.vercel.app/dollsLimit")
             .then(res => res.json())
             .then(data => setToys(data))
+           
     }, []);
 
     const handleShowAllData = () => {
@@ -21,7 +23,9 @@ const AllToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
         setShowAll(false)
-    }
+       
+    };
+       
     return (
         <div className="my-con lg:pb-20">
             <div className="text-center lg:mb-6">
@@ -43,7 +47,7 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-                        {loading ? <></> :
+                        {loading ? <CircleLoader color="#36d7b7" /> :
                             toys.filter(toy => {
                                 return search.toLowerCase() === "" ? toy : toy.name.toLowerCase().includes(search)
                             }

@@ -27,17 +27,17 @@ const Header = () => {
                 <div className="flex-none">
                     <button onClick={() => setHumMenu(!humMenu)} className="lg:hidden">
                         {
-                            humMenu ? <HiX></HiX> : <FaBars></FaBars>
+                            humMenu ? <HiX className="h-8 w-8"></HiX> : <FaBars className="h-8 w-8"></FaBars>
                         }
                     </button>
 
 
-                <div className={`lg:space-x-8 font-semibold text-lg lg:font-bold lg:col-span-3 flex flex-col lg:flex-row gap-3 items-center transform duration-700 ease-in-out absolute lg:static  ${humMenu ? "right-0 top-12 bg-slate-400 lg:bg-none py-4 px-4": "right-0 -top-44"}`}>
-                    <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/">Home</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/allToys">All Toys</NavLink>
+                <div className={`lg:space-x-8 font-semibold text-lg lg:font-bold lg:col-span-3 flex flex-col lg:flex-row gap-3 items-center absolute lg:static z-50 ${ humMenu ? "right-0 top-12 bg-slate-400 lg:bg-none py-4 px-4": "right-0 -top-72"}  `}>
+                <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/">Home</NavLink>
+                    <NavLink  to="/allToys">All Toys</NavLink>
                     <NavLink to="/blog">Blog</NavLink>
 
-                    <div className="lg:space-x-8 lg:flex items-center">
+                    <div className="lg:space-x-8 flex flex-col gap-y-2 lg:gap-y-0 lg:flex-row items-center">
                         {
                             user ? <>
                                 <NavLink to="/myToys">My Toys</NavLink>
@@ -46,7 +46,7 @@ const Header = () => {
                                 <img
                                     onMouseOver={handleShowName}
                                     onMouseOut={handleHideName}
-                                    src={user?.photoURL} alt="userPhoto" className="lg:w-8 lg:h-8 rounded-full border " />
+                                    src={user?.photoURL} alt="userPhoto" className=" w-8 h-8 lg:w-8 lg:h-8 rounded-full border " />
                                      {
                                     showName && <h1 className="absolute right-0 -bottom-7 text-slate-600 text-sm lg:w-[140px]  text-right rounded">{user?.displayName}</h1> 
                                 }

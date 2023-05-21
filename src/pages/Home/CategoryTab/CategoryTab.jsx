@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Toy from "../../../card/Toy/Toy";
+import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import { BounceLoader } from "react-spinners";
 
 
 const CategoryTab = () => {
+    const {loading} = useContext(AuthContext)
     const [toys, setToys] = useState([]);
     const [activeTab, setActiveTab] = useState("Disney Dolls");
     useEffect(() => {
@@ -41,7 +44,7 @@ const CategoryTab = () => {
                 </div>
                 <div className="mt-4 grid lg:grid-cols-3 gap-y-5 lg:gap-10">
 
-                    {
+                    { loading ? <BounceLoader color="#36d7b7" className="m-auto" />  :
                         toys.map(toy => <Toy
                             key={toy._id}
                             toy={toy}

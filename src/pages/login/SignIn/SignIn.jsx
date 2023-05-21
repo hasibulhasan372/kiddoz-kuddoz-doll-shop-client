@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
@@ -9,18 +9,25 @@ const SignIn = () => {
     const { logIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [error, setError] = useState([]) 
 
     const from = location.state?.from?.pathname || "/"; 
 
     const handleLogIn = (e) => {
         e.preventDefault();
+        setError('')
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        
         logIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 form.reset("")
+                if(!password){
+                     setError("Email or Password not matched")
+                     return;
+                }
                 if (loggedUser) {
                     Swal.fire({
                         position: 'top',
@@ -32,7 +39,10 @@ const SignIn = () => {
                 }
                 navigate(from, {replace: true})
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+
+                return setError("Wrong email or password", error)
+            })
 
     }
 
@@ -50,6 +60,10 @@ const SignIn = () => {
                     </div>
                     <div>
                         <input type="submit" value="Submit" className="btn btn-bg-color border-rose-400 capitalize text-lg hover:bg-red-600 hover:border-none  " />
+
+                    </div>
+                    <div className="lg:mt-3">
+                        <h3 className="text-red-500 font-semibold">{error}</h3>
 
                     </div>
                     <div className="mt-4">

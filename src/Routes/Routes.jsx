@@ -10,6 +10,7 @@ import MyToys from "../pages/MyToys/MyToys";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../pages/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -23,17 +24,14 @@ const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
-            path:"login",
-            element: <SignIn></SignIn>
-        },
-        {
-            path: "signUp",
-            element: <SignUp></SignUp>
+            path: "blog",
+            element: <Blog></Blog>
         },
         {
             path: "allToys",
             element: <AllToys></AllToys>
         },
+
         {
             path: "myToys",
             element: <MyToys></MyToys>
@@ -51,7 +49,15 @@ const router = createBrowserRouter([
             path: "update/:id",
             element: <UpdateToy></UpdateToy>,
             loader: ({params}) => fetch(`https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls/${params.id}`)
-        }
+        },
+        {
+            path:"login",
+            element: <SignIn></SignIn>
+        },
+        {
+            path: "signUp",
+            element: <SignUp></SignUp>
+        },
       ]
     },
   ]);
