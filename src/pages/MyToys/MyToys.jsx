@@ -82,7 +82,7 @@ const MyToys = () => {
                 <button className=" btn bg-[#4acdd5] border-none text-[#fff] capitalize hover:bg-[#106a6e] transform duration-500" onClick={handleHighPrice}>High to Low</button>
             </div>
             <div className="overflow-x-auto w-full">
-                <table className="  table-auto">
+                <table className="  table-auto text-center">
                     {/* head */}
                     <thead  >
                         <tr className="main-text-color  bg-slate-100">

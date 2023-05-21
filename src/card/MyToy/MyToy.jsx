@@ -28,7 +28,7 @@ const MyToy = ({ myToy, handleDeleteToy }) => {
                 {rating}
 
             </td>
-            <td className="space-x-4 space-y-4 text-center">
+            <td className="space-x-4 space-y-4 ">
                 <Link to={`/update/${_id}`}>
                     <button className="secondary-btn capitalize">Update</button>
                 </Link>

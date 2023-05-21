@@ -30,8 +30,7 @@ const Header = () => {
                             humMenu ? <HiX className="h-8 w-8"></HiX> : <FaBars className="h-8 w-8"></FaBars>
                         }
                     </button>
-
-
+                    
                 <div className={`lg:space-x-8 font-semibold text-lg lg:font-bold lg:col-span-3 flex flex-col lg:flex-row gap-3 items-center absolute lg:static z-50 ${ humMenu ? "right-0 top-12 bg-slate-400 lg:bg-none py-4 px-4": "right-0 -top-72"}  `}>
                 <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/">Home</NavLink>
                     <NavLink  to="/allToys">All Toys</NavLink>
