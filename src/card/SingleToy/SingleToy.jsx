@@ -8,7 +8,7 @@ const SingleToy = ({ toy }) => {
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-32 h-32">
+                        <div className="mask mask-squircle lg:w-32 lg:h-32">
                             <img src={img} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
@@ -27,7 +27,7 @@ const SingleToy = ({ toy }) => {
             <td>{sellerName}</td>
             <th>
                 <Link to={`/viewDetails/${_id}`}>
-                    <button className="btn btn-primary capitalize">View Details</button>
+                    <button className="secondary-btn capitalize">View Details</button>
                 </Link>
             </th>
         </tr>

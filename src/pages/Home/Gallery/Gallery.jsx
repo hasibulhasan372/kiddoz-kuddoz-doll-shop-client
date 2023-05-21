@@ -17,7 +17,7 @@ const Gallery = () => {
                 <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-4" >
                     {
                         images.map(img =>
-                            <img  key={img._id} src={img.img} alt="toys" className="cursor-pointer w-[150px] h-[150px] lg:w-[250px]  lg:h-[270px] object-cover transform hover:scale-90 hover:-rotate-12 duration-500 ease-in-out hover:rounded-3xl overflow-x-hidden "
+                            <img  key={img._id} src={img.img} alt="toys" className="cursor-pointer w-[150px] h-[150px] lg:w-[250px]  lg:h-[270px] object-cover overflow-x-hidden "
                             data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
                             />
                         )

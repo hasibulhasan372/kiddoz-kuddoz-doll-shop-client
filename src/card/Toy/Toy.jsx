@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 
@@ -17,9 +18,8 @@ const Toy = ({ toy }) => {
                 <p className="font-semibold text-slate-800 overflow-x-hidden"
               
                 >Price: {price}</p>
-                <p className="font-semibold text-slate-800 overflow-x-hidden"
-               
-                >Rating: {rating}</p>
+                <div className="font-semibold text-slate-800 flex"> Rating: {rating}
+                </div>
                 <div className=" text-right">
                     <Link to={`/viewDetails/${_id}`}>
                     <button  className="secondary-btn overflow-x-hidden"

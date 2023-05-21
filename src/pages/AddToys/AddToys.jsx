@@ -3,8 +3,10 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from "../../customHooks/useTitle";
 
 const AddToys = () => {
+    useTitle("addToys")
     const {user} = useContext(AuthContext);
 
     const handleDollPost = e =>{
@@ -30,7 +32,6 @@ const AddToys = () => {
             quantity: parseFloat(quantity),
             details
         }
-        console.log(dollsDetails)
         fetch("https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls",{
             method: "POST",
             headers: {
@@ -41,20 +42,18 @@ const AddToys = () => {
         .then(res => res.json()
         )
         .then(data => {
-            console.log(data)
             if(data.insertedId){
                 toast ("The Toy is added")
             }
-            
         })
-
-    }
+    };
 
     return (
-        <div className="my-con my-10 lg:my-16">
-            <h1 className="lg:text-4xl font-bold text-center ">Add your Toys </h1>
-            <div className="lg:w-2/3 m-auto mt-10 border p-6">
-                <form onSubmit={handleDollPost} className="grid lg:grid-cols-2 lg:gap-5">
+        <div className="my-con my-6 pb-10 lg:my-8 rounded bg-cyan-100">
+            <h1 className="lg:text-4xl font-bold text-center lg:pt-8">Add Your Toy </h1>
+            <div className="lg:w-5/6 m-auto mt-10  lg:p-10">
+                {/* Toys Added Form  */}
+                <form onSubmit={handleDollPost} className="grid lg:grid-cols-2 lg:gap-5 ">
                     <div>
                         <label className="text-base font-medium block mb-2"> Doll Name</label>
                         <input type="text" name="name" id="name" placeholder="Doll Name" className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required />
@@ -65,7 +64,7 @@ const AddToys = () => {
                     </div>
                     <div>
                         <label className="text-base font-medium block mb-2"> Seller Email</label>
-                        <input type="email" name="email" id="email" defaultValue={user?.email} className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full" required readOnly />
+                        <input type="email" name="email" id="email" defaultValue={user?.email} className=" border  border-[#4acdd5] py-2 rounded pl-2 w-full"  readOnly />
                     </div>
                     <div>
                         <label className="text-base font-medium block mb-2"> Doll Price</label>
@@ -94,8 +93,8 @@ const AddToys = () => {
                     <div className="">
                         <input type="submit" value="Submit" className=" text-xl btn-bg-color font-semibold text-white py-2 px-4 border rounded-lg " />
                     </div>
-
                 </form>
+
                 <ToastContainer></ToastContainer>
             </div>
         </div>

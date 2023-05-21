@@ -2,14 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import SingleToy from "../../card/SingleToy/SingleToy";
 import { CircleLoader } from "react-spinners";
+import useTitle from "../../customHooks/useTitle";
 
 
 const AllToys = () => {
     const [toys, setToys] = useState([]);
     const { loading } = useContext(AuthContext);
     const [search, setSearch] = useState("");
-    const [showAll, setShowAll] = useState(true)
-
+    const [showAll, setShowAll] = useState(true);
+    useTitle("allToys");
 
     useEffect(() => {
         fetch("https://kiddoz-kuddoz-doll-shop-server.vercel.app/dollsLimit")
@@ -61,7 +62,7 @@ const AllToys = () => {
                 </table>
             </div>
             <div className="lg:mt-10 text-center">
-                <button onClick={handleShowAllData} disabled={!showAll} className="btn  btn-success capitalize">Show All</button>
+                <button onClick={handleShowAllData} disabled={!showAll} className="main-btn capitalize">Show All</button>
             </div>
 
         </div>

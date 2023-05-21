@@ -1,6 +1,8 @@
 
 
+
 const About = () => {
+    
     return (
         <div className="my-con py-10 lg:py-12 text-center lg:text-left overflow-x-hidden ">
             <h1 className="main-text-color text-center font-bold text-xl lg:text-3xl overflow-x-hidden"

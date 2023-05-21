@@ -29,8 +29,6 @@ const CategoryTab = () => {
                 <div className="flex overflow-x-hidden" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out">
                     <button onClick={() => handleTabName("Disney Dolls")}
                         className={`overflow-x-hidden ${activeTab === "Disney Dolls" ? "border-t border-r p-2 font-semibold main-text-color text-lg" : "border-t border-r p-2 bg-slate-300 font-semibold text-lg "}`}
-                       
-                        
                         >
                         Disney Doll
                     </button>

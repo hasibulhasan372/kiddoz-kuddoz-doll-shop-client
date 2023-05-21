@@ -3,13 +3,15 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import MyToy from "../../card/MyToy/MyToy";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useTitle from "../../customHooks/useTitle";
 
 
 const MyToys = () => {
     const { user, loading } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
-    const url = `https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls?sellerEmail=${user?.email}`
+    useTitle("myToys")
 
+    const url = `https://kiddoz-kuddoz-doll-shop-server.vercel.app/dolls?sellerEmail=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -73,7 +75,7 @@ const MyToys = () => {
     }
 
     return (
-        <div className="my-con lg:my-12">
+        <div className="my-con py-8 lg:py-16">
             <div className=" flex gap-4 mb-4 items-center">
                 <h4 className="text-xl font-semibold"> Sort By: </h4>
                 <button className="btn bg-[#4acdd5] border-none text-[#fff] capitalize hover:bg-[#106a6e] transform duration-500" onClick={handleLowPrice}>Low to High</button>

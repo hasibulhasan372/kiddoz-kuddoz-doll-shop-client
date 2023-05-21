@@ -26,5 +26,5 @@
   @apply  py-2 px-2 lg:px-4 border bg-[#ff6799] text-white font-medium rounded-lg text-xl capitalize;
 }
 .secondary-btn{
-  @apply  py-2 px-2 lg:px-4 border border-[#ff6799] text-white font-medium rounded-lg text-xl capitalize;
+  @apply  py-2 lg:py-3 px-2 lg:px-4 border border-[#ff6799] text-[#ff6799] font-medium rounded-lg text-xl capitalize;
 }

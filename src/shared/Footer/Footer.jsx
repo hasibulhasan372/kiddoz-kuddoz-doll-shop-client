@@ -3,7 +3,8 @@ import { MdEmail, MdContactPhone, MdFacebook,  } from "react-icons/md";
 import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
-        <section className=" hero overflow-x-hidden" style={{ backgroundImage: `url("https://i.ibb.co/pPjmSx7/pexels-andres-victorero-3730754.jpg")` }}
+        <div>
+            <div className=" hero overflow-x-hidden" style={{ backgroundImage: `url("https://i.ibb.co/pPjmSx7/pexels-andres-victorero-3730754.jpg")` }}
         
         >
             <div className="hero-overlay bg-opacity-60 "></div>
@@ -11,9 +12,9 @@ const Footer = () => {
              data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="50" data-aos-easing="ease-in-out"
             >
                 <div className='lg:col-span-2 overflow-x-hidden'
-                
                 >
                     <img src="https://i.ibb.co/JxxscGk/logo.png" alt="" className="w-20 h-20 mb-4 rounded-full" />
+                    <h2 className='text-xl lg:text-3xl font-bold font-serif  my-4 text-[#91f6fb] '><span className='main-text-color'>Kiddoz Kuddoz</span> Doll Shop</h2>
                     <p className="text-lg text-white mb-4">It is a toy shop where you will; get all the dolls for kid. We are selling the most unique dolls with every size, color, design and different from other marketplace. </p>
                     <p className='text-lg text-white flex gap-3 '><FaAddressBook className='text-3xl text-orange-500'></FaAddressBook>
                     Address: Dhanmondi 27, 3/4 Street, Dhaka
@@ -51,11 +52,13 @@ const Footer = () => {
                     <Link className='text-lg text-white flex gap-3 mt-2'><FaPinterest className='text-3xl text-orange-500'></FaPinterest>
                     Pinterest
                     </Link>
-                    
                 </div>
-
             </div>
-        </section>
+        </div>
+        <div className=' py-2 lg:py-3 bg-blue-300'>
+        <p className='text-[#2a1a1a] my-con'>Copyright © 2012 - 2023 TermsFeed®. All rights reserved.</p>
+        </div>
+        </div>
     );
 };
 

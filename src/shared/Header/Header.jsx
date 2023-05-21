@@ -41,7 +41,7 @@ const Header = () => {
                         {
                             user ? <>
                                 <NavLink to="/myToys">My Toys</NavLink>
-                                <NavLink to="/addToys">Add Toys</NavLink>
+                                <NavLink to="/addToys">Add A Toy</NavLink>
                                 <NavLink className="relative">
                                 <img
                                     onMouseOver={handleShowName}

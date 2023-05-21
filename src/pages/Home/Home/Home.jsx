@@ -1,3 +1,5 @@
+
+import useTitle from "../../../customHooks/useTitle";
 import About from "../About/About";
 import CategoryTab from "../CategoryTab/CategoryTab";
 import CustomerFeedback from "../CustomerFeedback/CustomerFeedback";
@@ -6,6 +8,7 @@ import HeroSection from "../HeroSection/HeroSection";
 
 
 const Home = () => {
+    useTitle("home")
     return (
         <>
             <HeroSection></HeroSection>

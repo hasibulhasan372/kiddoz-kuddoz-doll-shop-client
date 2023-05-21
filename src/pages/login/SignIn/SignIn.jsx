@@ -3,13 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import GoogleSignIn from "../GoogleSignIn/GoogleSignIn";
 import Swal from "sweetalert2";
+import useTitle from "../../../customHooks/useTitle";
 
 
 const SignIn = () => {
     const { logIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const [error, setError] = useState([]) 
+    const [error, setError] = useState("");
+    useTitle("login")
 
     const from = location.state?.from?.pathname || "/"; 
 
@@ -40,7 +42,6 @@ const SignIn = () => {
                 navigate(from, {replace: true})
             })
             .catch(error => {
-
                 return setError("Wrong email or password", error)
             })
 
@@ -64,7 +65,6 @@ const SignIn = () => {
                     </div>
                     <div className="lg:mt-3">
                         <h3 className="text-red-500 font-semibold">{error}</h3>
-
                     </div>
                     <div className="mt-4">
                     <h2 className="text-lg font-semibold">Or</h2>

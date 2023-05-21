@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const CustomerFeedback = () => {
     const [feedbacks, setFeedbacks] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/customerFeedback')
+        fetch('https://kiddoz-kuddoz-doll-shop-server.vercel.app/customerFeedback')
             .then(res => res.json())
             .then(data => setFeedbacks(data))
     }, [])

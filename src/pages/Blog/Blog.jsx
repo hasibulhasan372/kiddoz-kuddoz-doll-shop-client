@@ -1,6 +1,8 @@
+import useTitle from "../../customHooks/useTitle";
 
 
 const Blog = () => {
+    useTitle("blog")
     return (
         <div className="my-con">
             <div className="lg:py-20 p-10">
